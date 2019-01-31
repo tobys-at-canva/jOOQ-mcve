@@ -58,7 +58,7 @@ public class MCVETest {
 
     @Before
     public void setup() throws Exception {
-        connection = DriverManager.getConnection("jdbc:h2:~/mcve", "sa", "");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost/mcve", "root", "password");
         ctx = DSL.using(connection);
     }
 

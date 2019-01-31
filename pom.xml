@@ -11,9 +11,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.jooq.version>3.11.7</org.jooq.version>
-        <db.url>jdbc:h2:~/mcve</db.url>
-        <db.username>sa</db.username>
-        <db.password></db.password>
+        <db.url>jdbc:mysql://localhost/mcve</db.url>
+        <db.username>root</db.username>
+        <db.password>password</db.password>
     </properties>
 
     <dependencies>
@@ -24,11 +24,13 @@
             <artifactId>jooq</artifactId>
             <version>${org.jooq.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.197</version>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>8.0.14</version>
         </dependency>
+
 
         <!-- Logging -->
         <dependency>
@@ -102,7 +104,7 @@
                             <generator>
                                 <database>
                                     <includes>.*</includes>
-                                    <inputSchema>MCVE</inputSchema>
+                                    <inputSchema>mcve</inputSchema>
                                 </database>
                                 <generate>
                                     <generatedAnnotation>false</generatedAnnotation>
